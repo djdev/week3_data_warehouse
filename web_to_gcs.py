@@ -49,7 +49,7 @@ def web_to_gcs(year, service):
         print(f"Local: {file_name}")
 
         df = pq.read_table(file_name)
-        df['airport_fee'].cast(pa.float64())
+        # df['airport_fee'].cast(pa.float64())
 
         #df.to_parquet(file_name, engine='pyarrow')
         print(f"Parquet: {file_name}")
@@ -63,6 +63,6 @@ def web_to_gcs(year, service):
 # web_to_gcs('2020', 'green')
 # web_to_gcs('2022', 'green')
 # web_to_gcs('2019', 'yellow')
-web_to_gcs('2020', 'yellow')
-# web_to_gcs('2019', 'fhv')
+# web_to_gcs('2020', 'yellow')
+web_to_gcs('2019', 'fhv')
 # web_to_gcs('2020', 'fhv')
