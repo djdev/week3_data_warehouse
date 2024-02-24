@@ -49,7 +49,10 @@ def web_to_gcs(year, service):
         print(f"Local: {file_name}")
 
         df = pq.read_table(file_name)
-        # df['airport_fee'].cast(pa.float64())
+        #df['airport_fee'].cast(pa.float64())
+        df['PUlocationID'].cast(pa.float64())
+        df['DOlocationID'].cast(pa.float64())
+        df['SR_Flag'].cast(pa.float64())
 
         #df.to_parquet(file_name, engine='pyarrow')
         print(f"Parquet: {file_name}")
